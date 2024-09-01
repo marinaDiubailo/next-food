@@ -1,3 +1,5 @@
+import { HomePage } from '@/pages_/home'
+
 export default function Home() {
-  return <main>Next Food</main>
+  return <HomePage />
 }
