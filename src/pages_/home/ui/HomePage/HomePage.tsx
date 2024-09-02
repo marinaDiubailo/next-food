@@ -3,6 +3,7 @@ import s from './HomePage.module.scss'
 import { routes } from '@/shared/consts/routes'
 import { ImageSlideshow } from '../ImageSlideshow/ImageSlideshow'
 import { Page } from '@/widgets/page'
+import { AppLink } from '@/shared/ui'
 
 export const HomePage = () => {
   return (
@@ -17,8 +18,10 @@ export const HomePage = () => {
             <p>Пробуйте сами и делитесь рецептами своих блюд со всем миром.</p>
           </div>
           <div className={s.links}>
-            <Link href={routes.COMMUNITY}>Присоединяйтесь к нам</Link>
-            <Link href={routes.MEALS}>Попробуйте новое!</Link>
+            <AppLink href={routes.COMMUNITY} variant="text">
+              Присоединяйтесь к нам
+            </AppLink>
+            <AppLink href={routes.MEALS}>Попробуйте новое!</AppLink>
           </div>
         </div>
       </header>

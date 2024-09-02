@@ -10,7 +10,7 @@ export const CommunityPage = () => {
   return (
     <Page>
       <header className={s.header}>
-        <h1>
+        <h1 className={s.title}>
           Одна общая страсть: <span className={s.highlight}>Еда</span>
         </h1>
         <p>Присоединяйтесь к нашему сообществу и делитесь своими любимыми рецептами!</p>
