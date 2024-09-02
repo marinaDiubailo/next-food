@@ -5,6 +5,8 @@ import Image from 'next/image'
 import s from './Header.module.scss'
 import clsx from 'clsx'
 
+import { NavLink } from '../NavLink/NavLink'
+
 export const Header: React.FC<React.ComponentProps<'header'>> = ({ className }) => {
   return (
     <header className={clsx(s.header, className)}>
@@ -13,16 +15,8 @@ export const Header: React.FC<React.ComponentProps<'header'>> = ({ className }) 
       </Link>
       <nav className={s.menu}>
         <ul>
-          <li className={s.menuItem}>
-            <Link href={routes.MEALS} className={s.link}>
-              Блюда
-            </Link>
-          </li>
-          <li>
-            <Link href={routes.COMMUNITY} className={s.link}>
-              Сообщество
-            </Link>
-          </li>
+          <NavLink title={'Блюда'} href={routes.MEALS} />
+          <NavLink title={'Сообщество'} href={routes.COMMUNITY} />
         </ul>
       </nav>
     </header>

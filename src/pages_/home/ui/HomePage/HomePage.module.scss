@@ -34,7 +34,7 @@
     text-transform: uppercase;
     letter-spacing: 0.15rem;
 
-    background: linear-gradient(90deg, var(--color-accent-500), var(--color-accent-200));
+    background: var(--bg-text-accent);
     background-clip: text;
 
     -webkit-text-fill-color: transparent;
