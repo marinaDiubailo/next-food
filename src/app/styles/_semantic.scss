@@ -1,10 +1,13 @@
 :root {
   /* text */
-  --color-text-primary: var(--color-light-300);
+  --color-text-primary: var(--color-accent-100);
 
   /* backgrounds */
   --bg-primary: linear-gradient(var(--color-accent-900), var(--color-accent-800));
 
   /* border */
   --radius: 8px;
+
+  /* header */
+  --header-height: 100px;
 }

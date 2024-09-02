@@ -1,5 +1,5 @@
 import { routes } from '@/shared/consts/routes'
-import logo from '@/shared/assets/images/logo.png'
+import logo from '@/shared/assets/images/logo3.png'
 import Link from 'next/link'
 import Image from 'next/image'
 import s from './Header.module.scss'
@@ -10,7 +10,6 @@ export const Header: React.FC<React.ComponentProps<'header'>> = ({ className }) 
     <header className={clsx(s.header, className)}>
       <Link href={routes.HOME} className={s.logo}>
         <Image src={logo} alt={'Логотип: тарелка с едой'} priority />
-        Next Food
       </Link>
       <nav className={s.menu}>
         <ul>

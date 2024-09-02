@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import '../src/app/styles/index.scss'
 import { Header } from '@/widgets/header'
+import { ScrollArea } from '@/shared/ui'
 
 const montserrat = Montserrat({ subsets: ['cyrillic'] })
 
@@ -19,7 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={montserrat.className}>
         <Header />
-        {children}
+        <div className="wrapper">
+          <ScrollArea className="scrollArea">{children}</ScrollArea>
+        </div>
       </body>
     </html>
   )
