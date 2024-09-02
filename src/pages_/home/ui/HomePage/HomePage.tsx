@@ -7,7 +7,7 @@ import { Page } from '@/widgets/page'
 export const HomePage = () => {
   return (
     <Page className={s.page}>
-      <div className={s.header}>
+      <header className={s.header}>
         <div className={s.slideshow}>
           <ImageSlideshow />
         </div>
@@ -21,7 +21,7 @@ export const HomePage = () => {
             <Link href={routes.MEALS}>Попробуйте новое!</Link>
           </div>
         </div>
-      </div>
+      </header>
 
       <section className={s.section}>
         <h2>Как это работает?</h2>

@@ -9,13 +9,13 @@ import { Page } from '@/widgets/page'
 export const CommunityPage = () => {
   return (
     <Page>
-      <div className={s.header}>
+      <header className={s.header}>
         <h1>
           Одна общая страсть: <span className={s.highlight}>Еда</span>
         </h1>
         <p>Присоединяйтесь к нашему сообществу и делитесь своими любимыми рецептами!</p>
-      </div>
-      <div className={s.main}>
+      </header>
+      <article className={s.main}>
         <h2>Преимущества сообщества</h2>
 
         <ul className={s.perks}>
@@ -32,7 +32,7 @@ export const CommunityPage = () => {
             <p>Участвуйте в эксклюзивных мероприятиях</p>
           </li>
         </ul>
-      </div>
+      </article>
     </Page>
   )
 }
