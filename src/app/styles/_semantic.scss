@@ -1,14 +1,23 @@
 :root {
   /* text */
-  --color-text-primary: var(--color-accent-100);
+  --color-text-primary: var(--color-sienna-050);
+  --colot-text-secondary: var(--color-orange-100);
 
   /* backgrounds */
-  // --bg-primary: linear-gradient(var(--color-accent-900), var(--color-accent-800));
-  --bg-text-accent: linear-gradient(90deg, var(--color-accent-500), var(--color-accent-200));
+  --bg-text-accent: linear-gradient(90deg, var(--color-orange-300), var(--color-yellow-200));
+  --bg-card: linear-gradient(90deg, var(--color-orange-900), var(--color-yellow-900));
+  --bg-app-link: linear-gradient(90deg, var(--color-orange-300), var(--color-sienna-300));
+  --bg-app-link-hover: linear-gradient(90deg, var(--color-orange-400), var(--color-sienna-200));
+  --bg-nav-link: linear-gradient(90deg, var(--color-orange-200), var(--color-sienna-250));
 
   /* border */
   --radius: 8px;
 
   /* header */
   --header-height: 100px;
+
+  /* scrollbar */
+  --bg-scrollbar-track: var(--color-orange-900);
+  --bg-scrollbar-thumb: var(--color-sienna-050);
+  --bg-scrollbar-thumb-hover: var(--color-orange-100);
 }

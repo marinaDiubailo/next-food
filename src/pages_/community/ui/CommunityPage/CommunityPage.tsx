@@ -4,7 +4,7 @@ import mealIcon from '@/shared/assets/images/meal.png'
 import communityIcon from '@/shared/assets/images/community.png'
 import eventsIcon from '@/shared/assets/images/events.png'
 import s from './CommunityPage.module.scss'
-import { Page } from '@/widgets/page'
+import { Page } from '@/shared/ui'
 
 export const CommunityPage = () => {
   return (

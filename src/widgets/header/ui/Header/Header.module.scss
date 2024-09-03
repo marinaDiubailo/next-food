@@ -23,7 +23,12 @@
     width: 100px;
     height: 60px;
     object-fit: contain;
-    filter: drop-shadow(0 0 0.75rem rgb(0 0 0 / 50%));
+    filter: drop-shadow(0 0 12px rgb(255 255 255 / 30%));
+
+    &:hover {
+      filter: drop-shadow(0 0 12px rgb(255 255 255 / 50%));
+      transition: all 0.5s ease 0s;
+    }
   }
 }
 

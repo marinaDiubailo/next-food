@@ -1,14 +1,11 @@
-import { Page } from '@/widgets/page'
-
 import s from './MealsPage.module.scss'
 
 import { routes } from '@/shared/consts/routes'
-import { AppLink } from '@/shared/ui'
-import { getMeals } from '../api/meals'
-import { type Meal, MealsList } from '@/entities/meal'
+import { AppLink, AppLoader, Page } from '@/shared/ui'
+import { MealsList } from '@/entities/meal'
+import { Suspense } from 'react'
 
 export const MealsPage = async () => {
-  const meals = (await getMeals()) as Meal[]
   return (
     <Page>
       <header className={s.header}>
@@ -17,11 +14,19 @@ export const MealsPage = async () => {
         </h1>
         <p>Выберите любимый рецепт и приготовьте его сами! Это легко и весело!</p>
         <p>
-          <AppLink href={routes.SHARE}>Поделитесь своим любимым рецептом!</AppLink>
+          <AppLink href={routes.SHARE}>Поделитесь любимым рецептом!</AppLink>
         </p>
       </header>
       <section>
-        <MealsList meals={meals} />
+        <Suspense
+          fallback={
+            <div className={s.loaderWrapper}>
+              <AppLoader />
+            </div>
+          }
+        >
+          <MealsList />
+        </Suspense>
       </section>
     </Page>
   )

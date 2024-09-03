@@ -1,18 +1,26 @@
 :root {
-  /* accent */
-
-  --color-accent-100: #fff3e4;
-  --color-accent-200: #ffc905;
-  --color-accent-250: #f9b241;
-  --color-accent-300: #f9b331;
-  --color-accent-350: #ff9b05;
-  --color-accent-400: #ff8a05;
-  --color-accent-500: #f9572a;
-  --color-accent-550: #fd4715;
-  --color-accent-800: #2c2306;
-  --color-accent-900: #29251c;
-
   /* light */
   --color-light-100: #fff;
-  --color-light-300: #d9e2f1;
+
+  /* yellow */
+  --color-yellow-200: #ffc905;
+  --color-yellow-900: #25200f;
+
+  /* sienna */
+  --color-sienna-050: #fff3e4;
+  --color-sienna-200: #f9b241;
+  --color-sienna-250: #f9b331;
+  --color-sienna-300: #ff9b05;
+
+  /* orange */
+  --color-orange-100: #cfa69b;
+  --color-orange-200: #ff8a05;
+  --color-orange-300: #f9572a;
+  --color-orange-400: #fd4715;
+  --color-orange-900: #2c1e19;
+
+  /* red */
+  --color-red-100: #e4dbdd;
+  --color-red-500: #cc1439;
+  --color-red-600: #990f2b;
 }

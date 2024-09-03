@@ -6,7 +6,6 @@
   font-size: var(--font-size-xxl);
   text-decoration: none;
 
-  background: linear-gradient(90deg, var(--color-accent-500), var(--color-accent-350));
   border-radius: var(--radius);
 
   @media screen and (width <= 670px) {
@@ -17,21 +16,20 @@
 .primary {
   font-weight: bold;
   color: var(--color-light-100);
-  background: linear-gradient(90deg, var(--color-accent-500), var(--color-accent-350));
+  background: var(--bg-app-link);
 
   &:hover,
   &:active {
-    background: linear-gradient(90deg, var(--color-accent-550), var(--color-accent-250));
+    background: var(--bg-app-link-hover);
   }
 }
 
 .text {
-  color: var(--color-accent-350);
+  color: var(--color-sienna-300);
   background: transparent;
 
   &:hover,
   &:active {
-    color: var(--color-accent-250);
-    background: transparent;
+    color: var(--color-sienna-200);
   }
 }

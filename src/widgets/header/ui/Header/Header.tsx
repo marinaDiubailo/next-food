@@ -1,5 +1,5 @@
 import { routes } from '@/shared/consts/routes'
-import logo from '@/shared/assets/images/logo3.png'
+import logo from '@/shared/assets/images/logo.png'
 import Link from 'next/link'
 import Image from 'next/image'
 import s from './Header.module.scss'

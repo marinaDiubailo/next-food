@@ -23,7 +23,7 @@
   &::before {
     content: "";
     position: absolute;
-    background-color: var(--color-accent-800);
+    background-color: var(--bg-scrollbar-track);
     border-radius: var(--scrollbar-border-radius, 2px);
   }
 
@@ -65,7 +65,7 @@
     width: var(--thumb-size, 4px);
     height: 100%;
 
-    background-color: var(--color-accent-400);
+    background-color: var(--bg-scrollbar-thumb);
     border-radius: var(--scrollbar-border-radius, 2px);
 
     transition: all 0.3s ease-in;
@@ -81,6 +81,6 @@
   }
 
   &:hover::before {
-    background-color: var(--color-accent-550);
+    background-color: var(--bg-scrollbar-thumb-hover);
   }
 }

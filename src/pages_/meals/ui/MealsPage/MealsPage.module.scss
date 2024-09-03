@@ -25,18 +25,10 @@
   }
 }
 
-.link {
-  display: inline-block;
-
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
-
-  background: linear-gradient(90deg, #f9572a, #ff9b05);
-  border-radius: var(--radius);
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 @media screen and (width <= 992px) {

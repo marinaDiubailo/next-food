@@ -1,9 +1,8 @@
-import Link from 'next/link'
 import s from './HomePage.module.scss'
 import { routes } from '@/shared/consts/routes'
 import { ImageSlideshow } from '../ImageSlideshow/ImageSlideshow'
-import { Page } from '@/widgets/page'
-import { AppLink } from '@/shared/ui'
+
+import { AppLink, Page } from '@/shared/ui'
 
 export const HomePage = () => {
   return (
