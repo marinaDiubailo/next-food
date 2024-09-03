@@ -1,0 +1,166 @@
+.header {
+  display: flex;
+  gap: 36px;
+  margin-bottom: 36px;
+}
+
+.image {
+  position: relative;
+  flex: 1;
+  aspect-ratio: 1.4 / 1;
+
+  img {
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 0.5rem rgb(0 0 0 / 50%);
+    animation: fade-slide-in-from-left 1s ease-out forwards;
+  }
+}
+
+.headerText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+
+  animation: fade-slide-in-from-right 1s ease-out forwards;
+}
+
+.title {
+  font-size: 3rem;
+  text-shadow: 0 0 0.5rem rgb(0 0 0 / 50%);
+  text-transform: uppercase;
+}
+
+.creator {
+  font-size: var(--font-size-xxl);
+  font-style: italic;
+
+  background: var(--bg-app-link);
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  &:hover,
+  &:active {
+    text-shadow: 0 0 18px rgb(248 190 42 / 80%);
+    background: var(--bg-app-link-hover);
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.summary {
+  font-size: var(--font-size-xxl);
+  color: var(--color-text-secondary);
+}
+
+.instructions {
+  padding: 24px;
+
+  font-size: var(--font-size-xl);
+  line-height: 1.7;
+  color: var(--color-light-100);
+
+  background-color: rgb(255 255 255 / 10%);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgb(0 0 0 / 20%);
+
+  animation: fade-slide-in-from-bottom 1s ease-out forwards;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+.loading {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ddd6cb;
+  text-align: center;
+
+  animation: flash 1s ease-in-out infinite alternate;
+}
+
+@media screen and (width <= 900px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .creator {
+    font-size: var(--font-size-xl);
+  }
+
+  .summary {
+    font-size: var(--font-size-xl);
+  }
+
+  .content {
+    h2 {
+      font-size: 1.875rem;
+    }
+  }
+}
+
+@keyframes fade-slide-in-from-left {
+  0% {
+    transform: translateX(-1rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-slide-in-from-right {
+  0% {
+    transform: translateX(1rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-slide-in-from-bottom {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
