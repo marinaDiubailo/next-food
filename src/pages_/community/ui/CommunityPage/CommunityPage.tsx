@@ -4,20 +4,18 @@ import mealIcon from '@/shared/assets/images/meal.png'
 import communityIcon from '@/shared/assets/images/community.png'
 import eventsIcon from '@/shared/assets/images/events.png'
 import s from './CommunityPage.module.scss'
-import { Page } from '@/shared/ui'
+import { Page, PageHeader } from '@/shared/ui'
 
 export const CommunityPage = () => {
   return (
     <Page>
-      <header className={s.header}>
-        <h1 className={s.title}>
-          Одна общая страсть: <span className={s.highlight}>Еда</span>
-        </h1>
-        <p>Присоединяйтесь к нашему сообществу и делитесь своими любимыми рецептами!</p>
-      </header>
+      <PageHeader
+        title="Одна общая страсть:"
+        highlight="Еда"
+        text="Присоединяйтесь к нашему сообществу и делитесь своими любимыми рецептами!"
+      />
       <article className={s.main}>
         <h2>Преимущества сообщества</h2>
-
         <ul className={s.perks}>
           <li>
             <Image src={mealIcon} alt="A delicious meal" />

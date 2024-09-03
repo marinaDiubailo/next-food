@@ -1,19 +1,16 @@
 import clsx from 'clsx'
-import Link from 'next/link'
+
 import s from './AppLink.module.scss'
+import Link from 'next/link'
 
 export type AppLinkProps = {
   variant?: 'primary' | 'text'
 } & React.ComponentProps<typeof Link>
 
-export const AppLink: React.FC<AppLinkProps> = ({
-  variant = 'primary',
-  className,
-  children,
-  ...props
-}) => {
+export const AppLink: React.FC<AppLinkProps> = props => {
+  const { variant = 'primary', children, className, ...rest } = props
   return (
-    <Link {...props} className={clsx(s.link, s[variant], className)}>
+    <Link className={clsx(s.link, s[variant], className)} {...rest}>
       {children}
     </Link>
   )

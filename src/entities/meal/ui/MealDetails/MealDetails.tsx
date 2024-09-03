@@ -11,6 +11,7 @@ type Props = {
 
 export const MealDetails: React.FC<Props> = ({ meal, ...props }) => {
   const { creator, creator_email, instructions, title, summary, image } = meal
+  const formattedInstructions = instructions.replace(/\n/g, '<br />')
   return (
     <Page className={s.main} {...props}>
       <header className={s.header}>
@@ -27,7 +28,10 @@ export const MealDetails: React.FC<Props> = ({ meal, ...props }) => {
       </header>
       <article className={s.content}>
         <h2>Способ приготовления:</h2>
-        <p className={s.instructions} dangerouslySetInnerHTML={{ __html: instructions }}></p>
+        <p
+          className={s.instructions}
+          dangerouslySetInnerHTML={{ __html: formattedInstructions }}
+        ></p>
       </article>
     </Page>
   )

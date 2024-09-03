@@ -1,0 +1,78 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+
+  @media screen and (width <= 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fieldset {
+  padding: 8px 16px 16px;
+  background-color: rgb(255 255 255 / 10%);
+  border: 1px solid var(--color-light-900);
+  border-radius: var(--radius);
+
+  legend {
+    padding-inline: 8px;
+    font-size: var(--font-size-l);
+    font-style: italic;
+    color: var(--color-light-100);
+  }
+}
+
+.input {
+  resize: none;
+
+  display: block;
+
+  width: 100%;
+  padding: 8px 16px;
+
+  font-size: var(--font-size-l);
+  color: var(--color-text-primary);
+
+  background: var(--bg-input);
+  border: 1px solid var(--color-light-900);
+  border-radius: var(--radius);
+}
+
+.actions {
+  text-align: right;
+}
+
+.actions button {
+  all: unset;
+
+  cursor: pointer;
+
+  padding: 12px;
+
+  font-size: var(--font-size-xxl);
+  color: vat(--color-light-100);
+
+  background: var(--bg-app-link);
+  border: none;
+  border-radius: var(--radius);
+
+  &:hover,
+  &:focus {
+    background: var(--bg-app-link-hover);
+  }
+
+  &:disabled,
+  &:hover:disabled,
+  &:focus:disabled {
+    cursor: not-allowed;
+    color: #979797;
+    background: #ccc;
+  }
+}
