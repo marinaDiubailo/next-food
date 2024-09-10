@@ -3,13 +3,20 @@ import { routes } from '@/shared/consts/routes'
 import { ImageSlideshow } from '../ImageSlideshow/ImageSlideshow'
 
 import { AppLink, Page } from '@/shared/ui'
+import { getPreviews } from '../../api/getPreviews'
 
-export const HomePage = () => {
+export const HomePage = async () => {
+  const result = await getPreviews()
+
+  if ('error' in result) {
+    return <p>{result.message}</p>
+  }
+
   return (
     <Page className={s.page}>
       <header className={s.header}>
         <div className={s.slideshow}>
-          <ImageSlideshow />
+          <ImageSlideshow images={result} />
         </div>
         <div className={s.sloganContainer}>
           <div className={s.slogan}>

@@ -1,0 +1,28 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  margin-bottom: 12px;
+
+  font-size: 2rem;
+  text-align: center;
+
+  background: var(--bg-text-accent);
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  @media screen and (width <= 540px) {
+    font-size: var(--font-size-xxl);
+  }
+}
+
+.text {
+  font-size: var(--font-size-l);
+  text-align: center;
+}

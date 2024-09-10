@@ -1,0 +1,38 @@
+.fieldset {
+  padding: 8px 16px 16px;
+  background-color: var(--bg-ghost);
+  border: var(--border-ghost);
+  border-radius: var(--radius);
+
+  legend {
+    padding-inline: 8px;
+    font-size: var(--font-size-l);
+    font-style: italic;
+    color: var(--color-light-100);
+  }
+}
+
+.input {
+  resize: none;
+
+  display: block;
+
+  width: 100%;
+  padding: 8px 16px;
+
+  font-size: var(--font-size-l);
+  color: var(--color-text-primary);
+
+  background: var(--bg-input);
+  border: var(--border-ghost);
+  border-radius: var(--radius);
+}
+
+.error {
+  border: var(--border-error);
+}
+
+.errorText {
+  font-size: var(--font-size-s);
+  color: var(--color-text-error);
+}

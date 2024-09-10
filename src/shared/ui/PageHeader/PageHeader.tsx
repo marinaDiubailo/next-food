@@ -3,7 +3,7 @@ type Props = {
   title: string
   highlight: string
   text: string
-  addon?: React.ReactNode
+  addon?: React.ReactNode | null
 } & React.ComponentProps<'header'>
 
 export const PageHeader: React.FC<Props> = props => {

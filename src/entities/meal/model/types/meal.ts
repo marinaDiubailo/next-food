@@ -7,4 +7,5 @@ export type Meal = {
   creator: string
   creator_email: string
   instructions: string
+  timestamp: Date
 }

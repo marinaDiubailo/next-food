@@ -1,7 +1,7 @@
 'use client'
 
-import { AppError } from '@/shared/ui'
+import { ErrorPage } from '@/pages_/error'
 
 export default function Error() {
-  return <AppError />
+  return <ErrorPage />
 }

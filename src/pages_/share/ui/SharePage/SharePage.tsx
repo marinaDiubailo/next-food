@@ -11,7 +11,7 @@ export const SharePage = () => {
         text="или любым другим блюдом!"
       />
 
-      <section>
+      <section className={s.section}>
         <AddMealForm />
       </section>
     </Page>

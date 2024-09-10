@@ -1,11 +1,43 @@
+'use client'
 import s from './MealsPage.module.scss'
 
-import { routes } from '@/shared/consts/routes'
-import { AppLink, AppLoader, Page, PageHeader } from '@/shared/ui'
+import { AppLoader, Page, PageHeader } from '@/shared/ui'
 import { MealsList } from '@/entities/meal'
-import { Suspense } from 'react'
+import { useEffect } from 'react'
+import { routes } from '@/shared/consts/routes'
+import { getMeals } from '../../api/getMeals'
+import { AppLink } from '@/shared/ui'
+import { useInfiniteQuery } from '@tanstack/react-query'
+import { useInView } from 'react-intersection-observer'
 
-export const MealsPage = async () => {
+export const MealsPage = () => {
+  const {
+    data: meals,
+    fetchNextPage,
+    isFetching,
+    isFetchingNextPage,
+  } = useInfiniteQuery({
+    queryKey: ['meals'],
+    queryFn: getMeals,
+    initialPageParam: undefined,
+    getNextPageParam: lastPage => lastPage.lastVisible,
+    staleTime: 1000 * 60 * 5,
+  })
+
+  const mealsData = meals?.pages.flatMap(page => page.mealsData)
+
+  const { ref, inView } = useInView({
+    threshold: 0,
+  })
+
+  console.log(meals?.pages)
+
+  useEffect(() => {
+    if (inView) {
+      fetchNextPage()
+    }
+  }, [inView])
+
   return (
     <Page>
       <PageHeader
@@ -14,17 +46,22 @@ export const MealsPage = async () => {
         text="Выберите любимый рецепт и приготовьте его сами! Это легко и весело!"
         addon={<AppLink href={routes.SHARE}>Поделитесь любимым рецептом!</AppLink>}
       />
+
       <section>
-        <Suspense
-          fallback={
-            <div className={s.loaderWrapper}>
-              <AppLoader />
-            </div>
-          }
-        >
-          <MealsList />
-        </Suspense>
+        {isFetching && (
+          <div className={s.loaderWrapper}>
+            <AppLoader />
+          </div>
+        )}
+        {mealsData && <MealsList meals={mealsData} />}
       </section>
+
+      {!isFetching && <div className={s.trigger} ref={ref} />}
+      {isFetchingNextPage && (
+        <div className={s.loaderWrapper}>
+          <AppLoader />
+        </div>
+      )}
     </Page>
   )
 }

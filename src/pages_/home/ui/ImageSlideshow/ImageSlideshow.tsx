@@ -2,11 +2,14 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { images } from '../../model/consts/images'
 import s from './ImageSlideshow.module.scss'
 import clsx from 'clsx'
 
-export const ImageSlideshow = () => {
+type Props = {
+  images: string[]
+}
+
+export const ImageSlideshow: React.FC<Props> = ({ images }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   useEffect(() => {
@@ -22,9 +25,13 @@ export const ImageSlideshow = () => {
       {images.map((image, idx) => (
         <Image
           key={idx}
-          src={image.image}
+          src={image}
+          fill
+          priority
+          placeholder="blur"
+          blurDataURL="https://fakeimg.pl/600x400?text=Delicious+food"
           className={clsx(idx === currentImageIndex && s.active)}
-          alt={image.alt}
+          alt={'Slide ' + (idx + 1)}
         />
       ))}
     </div>

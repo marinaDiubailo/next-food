@@ -1,0 +1,41 @@
+.controls {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.input {
+  display: none;
+}
+
+.preview {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  aspect-ratio: 1.4 / 1;
+  width: 160px;
+
+  color: var(--color-text-secondary);
+  text-align: center;
+
+  border: var(--border-ghost);
+  border-radius: var(--radius);
+
+  img {
+    object-fit: cover;
+  }
+
+  p {
+    padding: 16px;
+  }
+}
+
+@media screen and (width <= 420px) {
+  .controls {
+    flex-direction: column;
+  }
+}

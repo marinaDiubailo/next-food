@@ -2,6 +2,7 @@
   /* text */
   --color-text-primary: var(--color-sienna-050);
   --colot-text-secondary: var(--color-orange-100);
+  --color-text-error: var(--color-red-400);
 
   /* backgrounds */
   --bg-text-accent: linear-gradient(90deg, var(--color-orange-300), var(--color-yellow-200));
@@ -10,9 +11,12 @@
   --bg-app-link-hover: linear-gradient(90deg, var(--color-orange-400), var(--color-sienna-200));
   --bg-nav-link: linear-gradient(90deg, var(--color-orange-200), var(--color-sienna-250));
   --bg-input: linear-gradient(90deg, #1b1c2c, var(--color-orange-900));
+  --bg-ghost: rgb(255 255 255 / 10%);
 
   /* border */
   --radius: 4px;
+  --border-ghost: 1px solid var(--color-light-900);
+  --border-error: 1px solid var(--color-red-600);
 
   /* header */
   --header-height: 100px;
@@ -20,5 +24,5 @@
   /* scrollbar */
   --bg-scrollbar-track: var(--color-orange-900);
   --bg-scrollbar-thumb: var(--color-orange-100);
-  --bg-scrollbar-thumb-hover: var(--color-orange-100);
+  --bg-scrollbar-thumb-hover: var(--color-light-100);
 }

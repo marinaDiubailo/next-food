@@ -6,6 +6,7 @@ import s from './Header.module.scss'
 import clsx from 'clsx'
 
 import { NavLink } from '../NavLink/NavLink'
+import { HeaderAuth } from '../HeaderAuth/HeaderAuth'
 
 export const Header: React.FC<React.ComponentProps<'header'>> = ({ className }) => {
   return (
@@ -17,6 +18,7 @@ export const Header: React.FC<React.ComponentProps<'header'>> = ({ className }) 
         <ul>
           <NavLink title={'Блюда'} href={routes.MEALS} />
           <NavLink title={'Сообщество'} href={routes.COMMUNITY} />
+          <HeaderAuth />
         </ul>
       </nav>
     </header>

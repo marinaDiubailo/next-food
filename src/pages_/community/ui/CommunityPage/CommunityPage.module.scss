@@ -24,7 +24,8 @@
 
     color: var(--color-light-100);
 
-    background-color: rgb(255 255 255 / 10%);
+    background-color: var(--bg-ghost);
+    border: var(--border-ghost);
     border-radius: var(--radius);
     box-shadow: 0 4px 20px rgb(0 0 0 / 20%);
 

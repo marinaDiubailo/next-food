@@ -1,5 +1,5 @@
 import { type Meal, MealDetails } from '@/entities/meal'
-import { getMeal } from '../../api/meal'
+import { getMeal } from '../../api/getMeal'
 import { notFound } from 'next/navigation'
 
 export const MealPage = async ({ slug }: { slug: string }) => {

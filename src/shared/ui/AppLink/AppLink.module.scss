@@ -1,16 +1,13 @@
 .link {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
 
-  padding: 12px;
+  padding: 8px 18px;
 
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-l);
   text-decoration: none;
 
   border-radius: var(--radius);
-
-  @media screen and (width <= 670px) {
-    font-size: var(--font-size-xl);
-  }
 }
 
 .primary {
