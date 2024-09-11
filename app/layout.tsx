@@ -4,6 +4,7 @@ import '../src/app/styles/index.scss'
 import { Header } from '@/widgets/header'
 import { ScrollArea } from '@/shared/ui'
 import { Providers, ProgressProvider } from '@/app/providers'
+import { Toaster } from 'sonner'
 
 const montserrat = Montserrat({ subsets: ['cyrillic'] })
 
@@ -28,6 +29,18 @@ export default function RootLayout({
             </div>
           </Providers>
         </ProgressProvider>
+        <Toaster
+          position="top-center"
+          toastOptions={{
+            unstyled: true,
+            duration: 30000,
+
+            classNames: {
+              error: 'toast toastError',
+              success: 'toast toastSuccess',
+            },
+          }}
+        />
       </body>
     </html>
   )

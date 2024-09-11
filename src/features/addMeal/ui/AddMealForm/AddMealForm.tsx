@@ -14,6 +14,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useSession } from 'next-auth/react'
 
 import { saveMeal } from '../../api/saveMeal'
+import { toast } from 'sonner'
 
 export const AddMealForm = () => {
   const {
@@ -45,10 +46,10 @@ export const AddMealForm = () => {
 
       try {
         await saveMeal(data, user)
+        toast.success('Блюдо добавлено')
         reset()
       } catch (error) {
-        // TODO: add error handling
-        console.log(error)
+        toast.error('Что-то пошло не так! Попробуйте позже')
       }
     } else {
       return
