@@ -1,5 +1,6 @@
 .link {
   display: inline-flex;
+  gap: 8px;
   justify-content: center;
 
   padding: 8px 18px;
@@ -28,5 +29,15 @@
   &:hover,
   &:active {
     color: var(--color-sienna-200);
+  }
+}
+
+@keyframes glaze {
+  from {
+    background-position: 0;
+  }
+
+  to {
+    background-position: 315px;
   }
 }

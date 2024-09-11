@@ -26,6 +26,12 @@
   background: var(--bg-input);
   border: var(--border-ghost);
   border-radius: var(--radius);
+
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    border-color: var(--color-light-100);
+  }
 }
 
 .error {

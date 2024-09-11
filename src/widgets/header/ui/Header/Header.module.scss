@@ -46,18 +46,6 @@
 }
 
 @media screen and (width <= 768px) {
-  .logo {
-    gap: 16px;
-    font-size: var(--font-size-xl);
-  }
-
-  .menu ul {
-    gap: 16px;
-    font-size: var(--font-size-l);
-  }
-}
-
-@media screen and (width <= 540px) {
   .menu {
     display: none;
   }

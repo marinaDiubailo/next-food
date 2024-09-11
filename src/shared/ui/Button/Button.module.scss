@@ -41,13 +41,13 @@
   border-radius: var(--radius);
 
   &:hover,
-  &:focus {
+  &:active {
     background: var(--bg-input);
   }
 }
 
 .text {
-  color: var(--color-sienna-300);
+  color: var(--color-text-accent);
   background: transparent;
 
   &:hover,

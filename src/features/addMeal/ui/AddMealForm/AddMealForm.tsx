@@ -3,7 +3,13 @@ import { ImagePicker } from '../ImagePicker/ImagePicker'
 
 import s from './AddMealForm.module.scss'
 
-import { AppLoader, Button, ControlledTextField, ControlledTextArea } from '@/shared/ui'
+import {
+  AppLoader,
+  Button,
+  ControlledTextField,
+  ControlledTextArea,
+  ControlledSelect,
+} from '@/shared/ui'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import {
   AddMealFormValues,
@@ -15,6 +21,7 @@ import { useSession } from 'next-auth/react'
 
 import { saveMeal } from '../../api/saveMeal'
 import { toast } from 'sonner'
+import { mealCategories } from '../../model/consts/mealCategories'
 
 export const AddMealForm = () => {
   const {
@@ -28,6 +35,7 @@ export const AddMealForm = () => {
       title: '',
       summary: '',
       instructions: '',
+      category: mealCategories[0].value,
       image: undefined,
     },
     mode: 'onChange',
@@ -60,12 +68,19 @@ export const AddMealForm = () => {
     <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
       <ControlledTextField label={'Название блюда'} name={'title'} control={control} />
       <ControlledTextArea label={'Краткое описание'} name={'summary'} control={control} />
+      <ControlledSelect
+        options={mealCategories}
+        label={'Категория'}
+        name={'category'}
+        control={control}
+      />
       <ControlledTextArea
         label={'Способ приготовления:'}
         name={'instructions'}
         rows={10}
         control={control}
       />
+
       <div className={s.actions}>
         <ImagePicker control={control} />
         {errors.image?.message && (

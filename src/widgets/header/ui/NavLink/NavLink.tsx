@@ -14,7 +14,7 @@ export const NavLink: React.FC<Props> = ({ href, title, ...props }) => {
 
   return (
     <li {...props}>
-      <Link href={href} className={clsx(s.link, pathname.startsWith(href) && s.active)}>
+      <Link href={href} className={clsx(s.link, pathname.endsWith(href) && s.active)}>
         {title}
       </Link>
     </li>

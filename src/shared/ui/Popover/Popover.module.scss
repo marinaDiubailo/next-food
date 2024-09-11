@@ -1,0 +1,99 @@
+.content {
+  will-change: transform, opacity;
+
+  position: relative;
+  z-index: 50;
+
+  min-width: 160px;
+  padding: 16px;
+
+  background: var(--bg-input);
+  border: 1px solid var(--bg-ghost);
+  border-radius: var(--radius);
+
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+
+  &[data-state="open"] {
+    &[data-side="bottom"] {
+      animation-name: slide-down;
+    }
+
+    &[data-side="top"] {
+      animation-name: slide-up;
+    }
+
+    &[data-side="right"] {
+      animation-name: slide-right;
+    }
+
+    &[data-side="left"] {
+      animation-name: slide-left;
+    }
+  }
+}
+
+.trigger {
+  cursor: pointer;
+
+  padding: 6px 8px;
+
+  color: var(--color-text-primary);
+
+  background: transparent;
+  border: none;
+
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    color: var(--color-text-accent);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(2px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(-2px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-2px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(2px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

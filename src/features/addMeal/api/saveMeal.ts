@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid'
 import slugify from 'slugify'
 import { MealData } from '../model/types/mealData'
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
+import { ref, uploadBytes, getDownloadURL, type UploadMetadata } from 'firebase/storage'
 import { collection, addDoc, Timestamp } from 'firebase/firestore'
 import { imageStorage } from '@/shared/firebase/storage'
 import { db } from '@/shared/firebase/firestore'
@@ -17,8 +17,8 @@ export const saveMeal = async (meal: MealData, userData: UserData) => {
   const slug = getSlug(`${userData.firstName} ${userData.lastName} ${meal.title}`)
   const storageRef = ref(imageStorage, `images/${slug}-${append}`)
 
-  const metadata = {
-    contentType: meal.image.type, // Указываем тип файла
+  const metadata: UploadMetadata = {
+    contentType: meal.image.type,
   }
 
   await uploadBytes(storageRef, meal.image, metadata)

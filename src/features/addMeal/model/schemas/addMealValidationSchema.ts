@@ -1,8 +1,10 @@
 import { z } from 'zod'
+import { Category } from '../types/mealCategory'
 
 const imageSize = 10 * Math.pow(1024, 2)
 
 export const addMealValidationSchema = z.object({
+  category: z.nativeEnum(Category),
   title: z
     .string()
     .trim()

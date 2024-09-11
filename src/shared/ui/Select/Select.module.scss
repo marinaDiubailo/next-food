@@ -1,0 +1,151 @@
+.trigger {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 8px 16px;
+
+  font-size: var(--font-size-l);
+  color: var(--color-text-primary);
+
+  background: var(--bg-input);
+  border: var(--border-ghost);
+  border-radius: var(--radius);
+
+  transition: all 0.3s;
+
+  &[data-state="open"] {
+    color: var(--color-text-primary);
+    border-color: var(--color-light-100);
+  }
+
+  // &:disabled {
+  //   color: var(--color-light-900);
+  // }
+
+  & > span:not(:last-child) {
+    overflow: hidden;
+  }
+
+  &:hover:not(&:disabled) {
+    cursor: pointer;
+    border-color: var(--color-light-100);
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+
+  width: 24px;
+  height: 24px;
+
+  color: var(--color-text-primary);
+
+  transition: transform 0.3s ease-in;
+
+  [data-state="open"] > & {
+    transform: rotate(180deg);
+  }
+
+  &.pagination {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.item {
+  cursor: pointer;
+
+  width: 100%;
+  padding: 8px 16px;
+
+  background-color: transparent;
+
+  transition: all 0.3s;
+
+  &[data-highlighted] {
+    color: var(--color-text-accent);
+    background-color: var(--bg-ghost);
+    outline: none;
+  }
+
+  &[data-disabled] {
+    cursor: auto;
+    color: var(--color-light-900);
+  }
+}
+
+.itemContent {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.itemLabel {
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content {
+  overflow: hidden;
+
+  width: var(--radix-select-trigger-width);
+
+  background: var(--bg-input);
+  border: 1px solid var(--color-light-100);
+  border-radius: var(--radius);
+  outline: none;
+
+  &[data-state="closed"] {
+    animation: slide-up 0.3s ease-in;
+  }
+
+  &[data-state="open"] {
+    animation: slide-down 0.3s ease-in;
+  }
+}
+
+.label {
+  user-select: none;
+
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+
+  display: block;
+
+  padding-inline: 8px;
+
+  font-size: var(--font-size-l);
+  font-style: italic;
+  color: var(--color-light-100);
+
+  backdrop-filter: blur(2px);
+}
+
+.labelRoot {
+  position: relative;
+
+  padding: 16px;
+
+  background-color: var(--bg-ghost);
+  border: var(--border-ghost);
+  border-radius: var(--radius);
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-up {
+  to {
+    opacity: 1;
+  }
+}

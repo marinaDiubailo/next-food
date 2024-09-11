@@ -61,6 +61,26 @@
   }
 }
 
+.shake {
+  &:hover span {
+    animation: shake 0.3s ease-in-out 0s 2; /* 0.5s длительность, 2 итерации */
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(6px, -6px); /* Приподнимаем и смещаем вправо */
+  }
+
+  100% {
+    transform: translate(0, 0); /* Возвращаем на место */
+  }
+}
+
 @media screen and (width <= 1024px) {
   .slogan {
     font-size: var(--font-size-xl);

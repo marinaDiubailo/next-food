@@ -4,6 +4,7 @@ import { ImageSlideshow } from '../ImageSlideshow/ImageSlideshow'
 
 import { AppLink, Page } from '@/shared/ui'
 import { getPreviews } from '../../api/getPreviews'
+import { ArrowUpRight } from 'lucide-react'
 
 export const HomePage = async () => {
   const result = await getPreviews()
@@ -24,8 +25,11 @@ export const HomePage = async () => {
             <p>Пробуйте сами и делитесь рецептами своих блюд со всем миром.</p>
           </div>
           <div className={s.links}>
-            <AppLink href={routes.COMMUNITY} variant="text">
+            <AppLink href={routes.COMMUNITY} variant="text" className={s.shake}>
               Присоединяйтесь к нам
+              <span>
+                <ArrowUpRight />
+              </span>
             </AppLink>
             <AppLink href={routes.MEALS}>Попробуйте новое!</AppLink>
           </div>

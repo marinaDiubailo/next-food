@@ -7,6 +7,7 @@ import clsx from 'clsx'
 
 import { NavLink } from '../NavLink/NavLink'
 import { HeaderAuth } from '../HeaderAuth/HeaderAuth'
+import { HeaderPopover } from '../HeaderPopover/HeaderPopover'
 
 export const Header: React.FC<React.ComponentProps<'header'>> = ({ className }) => {
   return (
@@ -21,6 +22,7 @@ export const Header: React.FC<React.ComponentProps<'header'>> = ({ className }) 
           <HeaderAuth />
         </ul>
       </nav>
+      <HeaderPopover />
     </header>
   )
 }
