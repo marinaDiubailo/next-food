@@ -6,7 +6,7 @@ export const getMeal = async (uid: string) => {
   const mealSnap = await getDoc(mealRef)
 
   if (mealSnap.exists()) {
-    return mealSnap.data() // Возвращает данные документа
+    return JSON.parse(JSON.stringify(mealSnap.data())) // Возвращает данные документа
   } else {
     throw new Error('No such document!')
   }

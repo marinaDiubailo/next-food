@@ -24,20 +24,22 @@
   font-size: var(--font-size-xxl);
   line-height: var(--line-height-l);
   text-align: center;
+}
 
-  h1 {
-    margin-bottom: 24px;
+.title {
+  margin-bottom: 24px;
+  font-size: 2rem;
+  letter-spacing: 0.15rem;
+}
 
-    font-size: 2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.15rem;
+.accent {
+  font-weight: bold;
+  text-transform: uppercase;
 
-    background: var(--bg-text-accent);
-    background-clip: text;
+  background: var(--bg-text-accent);
+  background-clip: text;
 
-    -webkit-text-fill-color: transparent;
-  }
+  -webkit-text-fill-color: transparent;
 }
 
 .links {
@@ -54,11 +56,59 @@
   margin-bottom: 48px;
 
   font-size: var(--font-size-xxl);
+  line-height: 1.5;
   text-align: center;
+}
 
-  h2 {
-    margin-bottom: 24px;
+.sectionTitle {
+  margin-bottom: 24px;
+  font-size: 2.5rem;
+
+  &::after {
+    content: "";
+
+    display: block;
+
+    width: 70%;
+    height: 2px;
+    margin: 8px auto;
+
+    background: var(--color-light-800);
   }
+}
+
+.article {
+  margin: 24px 0;
+
+  h3 {
+    margin-bottom: 24px;
+    font-size: 2rem;
+  }
+
+  h4 {
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: var(--color-text-secondary);
+  }
+}
+
+.oppotunities {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  gap: 36px;
+
+  li {
+    padding: 24px;
+    background: var(--bg-ghost);
+    border: var(--border-ghost);
+    border-radius: var(--radius);
+  }
+}
+
+.circle {
+  color: var(--color-light-800);
 }
 
 .shake {
@@ -92,13 +142,38 @@
 }
 
 @media screen and (width <= 900px) {
+  .oppotunities {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+    gap: 24px;
+
+    li {
+      padding: 16px;
+    }
+  }
+
   .header {
     flex-direction: column;
+    margin-bottom: 48px;
   }
 
   .links {
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .section {
+    margin-bottom: 36px;
+    font-size: var(--font-size-xl);
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .article {
+    h3 {
+      font-size: var(--font-size-xxl);
+    }
   }
 }
 
@@ -128,5 +203,9 @@
   .links {
     flex-direction: column;
     gap: 0;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
   }
 }

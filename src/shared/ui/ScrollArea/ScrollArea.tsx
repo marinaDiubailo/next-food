@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
+import { forwardRef } from 'react'
 
 import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area'
 import { clsx } from 'clsx'
@@ -8,9 +8,9 @@ import s from './ScrollArea.module.scss'
 export type ScrollAreaProps = {
   maxHeight?: number | string
   maxWidth?: number | string
-} & ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root>
+} & React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root>
 
-const ScrollArea = forwardRef<ElementRef<typeof ScrollAreaPrimitive.Root>, ScrollAreaProps>(
+const ScrollArea = forwardRef<React.ElementRef<typeof ScrollAreaPrimitive.Root>, ScrollAreaProps>(
   (props, ref) => {
     const {
       children,
@@ -41,8 +41,8 @@ const ScrollArea = forwardRef<ElementRef<typeof ScrollAreaPrimitive.Root>, Scrol
 ScrollArea.displayName = ScrollAreaPrimitive.Root.displayName
 
 const ScrollBar = forwardRef<
-  ElementRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>,
-  ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>
+  React.ElementRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>,
+  React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>
 >(({ className, orientation = 'vertical', ...rest }, ref) => (
   <ScrollAreaPrimitive.ScrollAreaScrollbar
     className={clsx(s.scrollbar, className)}
