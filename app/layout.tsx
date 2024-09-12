@@ -33,7 +33,7 @@ export default function RootLayout({
           position="top-center"
           toastOptions={{
             unstyled: true,
-            duration: 30000,
+            duration: 3000,
 
             classNames: {
               error: 'toast toastError',
