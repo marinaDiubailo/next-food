@@ -1,12 +1,14 @@
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from '@/shared/firebase/firestore'
+import type { Meal } from '@/entities/meal'
 
 export const getMeal = async (uid: string) => {
   const mealRef = doc(db, 'meals', uid)
   const mealSnap = await getDoc(mealRef)
 
   if (mealSnap.exists()) {
-    return JSON.parse(JSON.stringify(mealSnap.data())) // Возвращает данные документа
+    const data = mealSnap.data() as Omit<Meal, 'id'>
+    return JSON.parse(JSON.stringify({ id: mealSnap.id, ...data }))
   } else {
     throw new Error('No such document!')
   }

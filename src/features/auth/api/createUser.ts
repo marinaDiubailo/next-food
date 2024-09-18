@@ -17,6 +17,7 @@ const createUser = async (user: UserCredential, additionalInfo: Record<string, s
     await setDoc(userDocRef, {
       email,
       createdAt,
+      id: user.user.uid,
       ...additionalInfo,
     })
   }

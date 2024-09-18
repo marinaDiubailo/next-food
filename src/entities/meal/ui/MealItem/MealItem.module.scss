@@ -13,6 +13,36 @@
   transition: all 0.3s ease-in-out;
 }
 
+.header {
+  position: relative;
+}
+
+.favorite {
+  cursor: pointer;
+
+  position: absolute;
+  top: 8px;
+  right: 12px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 4px;
+
+  color: var(--color-sienna-300);
+
+  background-color: rgb(63 46 26 / 47.3%);
+  backdrop-filter: blur(4px);
+  border: none;
+  border-radius: 50%;
+
+  transition: transform 0.2s ease 0s;
+
+  &:hover {
+    transform: scale(1.105);
+  }
+}
+
 .headerText {
   display: flex;
   flex-direction: column;
