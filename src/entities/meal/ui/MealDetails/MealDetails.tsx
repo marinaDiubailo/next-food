@@ -7,13 +7,14 @@ import s from './MealDetails.module.scss'
 import { Meal } from '../../model/types/meal'
 import { Button, Page } from '@/shared/ui'
 import { useRouter } from 'next/navigation'
+import { categoriesMap } from '../../model/consts/mealCategories'
 
 type Props = {
   meal: Meal
 } & React.ComponentProps<'main'>
 
 export const MealDetails: React.FC<Props> = ({ meal, ...props }) => {
-  const { creator, creator_email, instructions, title, summary, image } = meal
+  const { creator, creator_email, instructions, title, summary, image, category } = meal
   const router = useRouter()
   const formattedInstructions = instructions.replace(/\n/g, '<br />')
   return (
@@ -31,10 +32,11 @@ export const MealDetails: React.FC<Props> = ({ meal, ...props }) => {
             {creator}
           </a>
           <p className={s.summary}>{summary}</p>
+          <p className={s.category}>Категория: {categoriesMap[category]}</p>
         </div>
       </header>
       <article className={s.content}>
-        <h2>Способ приготовления:</h2>
+        <h2 className={s.category}>Способ приготовления:</h2>
         <p
           className={s.instructions}
           dangerouslySetInnerHTML={{ __html: formattedInstructions }}

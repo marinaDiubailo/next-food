@@ -1,3 +1,5 @@
+import { Category } from './mealCategory'
+
 export type Meal = {
   id: string
   title: string
@@ -8,4 +10,5 @@ export type Meal = {
   creator_email: string
   instructions: string
   timestamp: Date
+  category: Category
 }

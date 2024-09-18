@@ -25,3 +25,9 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>((props, r
     </fieldset>
   )
 })
+
+// onInput={e => {
+//             console.log(e.currentTarget.scrollHeight)
+//             e.currentTarget.style.height = 'auto'
+//             e.currentTarget.style.height = `${e.currentTarget.scrollHeight + 2}px`
+//           }}

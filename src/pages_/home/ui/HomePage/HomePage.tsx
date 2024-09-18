@@ -2,50 +2,11 @@ import s from './HomePage.module.scss'
 import { routes } from '@/shared/consts/routes'
 import { ImageSlideshow } from '../ImageSlideshow/ImageSlideshow'
 
-import { AppLink, Page, Accordion, type AccordionItem } from '@/shared/ui'
+import { AppLink, Page, Accordion } from '@/shared/ui'
 import { getPreviews } from '../../api/getPreviews'
-import {
-  ArrowUpRight,
-  BookOpen,
-  ReceiptText,
-  Soup,
-  MessageSquareHeart,
-  CalendarHeart,
-} from 'lucide-react'
+import { ArrowUpRight, BookOpen, ReceiptText, Soup, CalendarHeart } from 'lucide-react'
 import clsx from 'clsx'
-
-const items: AccordionItem[] = [
-  {
-    content:
-      'После регистрации перейдите в раздел "Добавить". Заполните все необходимые поля, такие как название, ингредиенты, пошаговая инструкция и фотографии. Нажмите "Поделиться", чтобы опубликовать рецепт.',
-    trigger: 'Как добавить свой рецепт?',
-  },
-  {
-    content:
-      'Да, вы можете редактировать или удалять свои рецепты в разделе "Книга/Мои рецепты". Просто выберите рецепт и воспользуйтесь соответствующими опциями.',
-    trigger: 'Могу ли я редактировать или удалять свои рецепты?',
-  },
-  {
-    content:
-      'Вы можете использовать поиск по ключевым словам или фильтры для поиска рецептов по категориям. Также можно просматривать популярные и новые рецепты на главной "Блюда".',
-    trigger: 'Как найти рецепты других пользователей?',
-  },
-  {
-    content:
-      '"Книга рецептов" — это ваша персональная коллекция понравившихся рецептов. Вы можете добавлять в нее рецепты, которые хотите попробовать, и легко к ним возвращаться. ',
-    trigger: 'Что такое "Книга рецептов"?',
-  },
-  {
-    content:
-      'Чтобы участвовать в мероприятиях, перейдите в раздел "Сообщество" и выберите интересующее вас событие. Вы можете зарегистрироваться или создать свое собственное мероприятие.',
-    trigger: 'Как участвовать в мероприятиях?',
-  },
-  {
-    content:
-      'Да, вы можете оставлять комментарии к рецептам, которые попробовали. Это поможет другим пользователям узнать о вашем опыте и впечатлениях.',
-    trigger: 'Могу ли я оставлять комментарии к рецептам?',
-  },
-]
+import { questionsItems } from '../../model/consts/questionsItems'
 
 export const HomePage = async () => {
   const result = await getPreviews()
@@ -104,16 +65,6 @@ export const HomePage = async () => {
                 коллекцию.
               </p>
             </li>
-            {/* <li>
-              <span className={s.circle}>
-                <MessageSquareHeart width={48} height={48} />
-              </span>
-              <h4>Комментирование:</h4>
-              <p>
-                Оставляйте отзывы и комментарии к рецептам, которые вы попробовали, чтобы помочь
-                другим пользователям.
-              </p>
-            </li> */}
             <li>
               <span className={s.circle}>
                 <BookOpen width={48} height={48} />
@@ -149,7 +100,7 @@ export const HomePage = async () => {
 
       <section className={s.section}>
         <h2 className={s.sectionTitle}>Часто задаваемые вопросы (FAQ)</h2>
-        <Accordion items={items} />
+        <Accordion items={questionsItems} />
       </section>
     </Page>
   )

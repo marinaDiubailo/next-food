@@ -13,7 +13,9 @@
   border: var(--border-ghost);
   border-radius: var(--radius);
 
-  transition: all 0.3s;
+  transition:
+    border-color 0.3s,
+    color 0.3s;
 
   &[data-state="open"] {
     color: var(--color-text-primary);

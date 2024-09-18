@@ -28,8 +28,8 @@
   color: var(--color-light-100);
   background: var(--bg-app-link);
 
-  &:hover,
-  &:active {
+  &:hover:not(:disabled),
+  &:active:not(:disabled) {
     background: var(--bg-app-link-hover);
   }
 }

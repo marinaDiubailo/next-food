@@ -6,7 +6,7 @@ export const mealCategories: MealCategory[] = [
     label: 'Первые блюда',
   },
   {
-    value: Category.SECOND,
+    value: Category.MAIN,
     label: 'Вторые блюда',
   },
   {
@@ -14,7 +14,7 @@ export const mealCategories: MealCategory[] = [
     label: 'Напитки',
   },
   {
-    value: Category.SALADS,
+    value: Category.APPETIZERS,
     label: 'Салаты и закуски',
   },
   {
@@ -22,3 +22,11 @@ export const mealCategories: MealCategory[] = [
     label: 'Десерты и выпечка',
   },
 ]
+
+export const categoriesMap: Record<Category, string> = {
+  [Category.FIRST]: 'Первые блюда',
+  [Category.MAIN]: 'Вторые блюда',
+  [Category.DRINKS]: 'Напитки',
+  [Category.APPETIZERS]: 'Салаты и закуски',
+  [Category.DESSERTS]: 'Десерты и выпечка',
+}

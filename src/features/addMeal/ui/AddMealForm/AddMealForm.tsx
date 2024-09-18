@@ -21,7 +21,7 @@ import { useSession } from 'next-auth/react'
 
 import { saveMeal } from '../../api/saveMeal'
 import { toast } from 'sonner'
-import { mealCategories } from '../../model/consts/mealCategories'
+import { mealCategories } from '@/entities/meal'
 
 export const AddMealForm = () => {
   const {
@@ -29,7 +29,6 @@ export const AddMealForm = () => {
     formState: { isValid, isSubmitting, errors },
     handleSubmit,
     reset,
-    setError,
   } = useForm<AddMealFormValues>({
     defaultValues: {
       title: '',
@@ -74,11 +73,12 @@ export const AddMealForm = () => {
         name={'category'}
         control={control}
       />
+
       <ControlledTextArea
         label={'Способ приготовления:'}
         name={'instructions'}
-        rows={10}
         control={control}
+        rows={10}
       />
 
       <div className={s.actions}>

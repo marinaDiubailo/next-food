@@ -1,4 +1,4 @@
-import { Category } from './mealCategory'
+import { Category } from '../../../../entities/meal/model/types/mealCategory'
 
 export type MealData = {
   title: string

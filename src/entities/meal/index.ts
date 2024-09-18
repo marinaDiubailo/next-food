@@ -1,3 +1,5 @@
 export type { Meal } from './model/types/meal'
+// export type { MealCategory } from './model/types/mealCategory'
 export { MealsList } from './ui/MealsList/MealsList'
 export { MealDetails } from './ui/MealDetails/MealDetails'
+export { mealCategories } from './model/consts/mealCategories'

@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { Category } from '../types/mealCategory'
+import { Category } from '../../../../entities/meal/model/types/mealCategory'
 
 const imageSize = 10 * Math.pow(1024, 2)
 

@@ -1,12 +1,13 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import clsx from 'clsx'
 import s from './ImagePicker.module.scss'
 import Image from 'next/image'
 import { Button } from '@/shared/ui'
-import { type Control, Controller } from 'react-hook-form'
+import { type Control, type FieldPath, Controller } from 'react-hook-form'
 import { AddMealFormValues } from '../../model/schemas/addMealValidationSchema'
+import { X } from 'lucide-react'
 
 type Props = {
   control: Control<AddMealFormValues>
