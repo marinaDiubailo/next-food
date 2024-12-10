@@ -11,6 +11,10 @@ import { useInfiniteQuery } from '@tanstack/react-query'
 import { useInView } from 'react-intersection-observer'
 
 export const MealsPage = () => {
+  //TODO: перенести в MealsList
+  // TODO:  select: (response) => response.pages.flatMap((page) => page.mealsData) вместо mealsData
+  // TODO:  добавить кастомный useInfiniteScroll вместо 'react-intersection-observer'
+  // TODO:  import { infiniteQueryOptions} from '@tanstack/react-query';
   const {
     data: meals,
     fetchNextPage,
