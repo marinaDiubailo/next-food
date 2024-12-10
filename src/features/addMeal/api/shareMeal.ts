@@ -5,6 +5,7 @@ import { MealData } from '../model/types/mealData'
 import { saveMeal } from './saveMeal'
 import { routes } from '@/shared/consts/routes'
 import { revalidatePath } from 'next/cache'
+import { Category } from '@/entities/meal'
 
 const isValid = (str: string) => str.trim().length !== 0
 const isEmail = (str: string) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(str)
@@ -15,6 +16,7 @@ export const shareMeal = async (prevSate: any, formData: FormData) => {
     summary: formData.get('summary') as string,
     instructions: formData.get('instructions') as string,
     image: formData.get('image') as File,
+    category: formData.get('category') as Category,
   }
 
   if (
